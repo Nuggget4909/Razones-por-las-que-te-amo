@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Razones por las que te amo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffccff; /* Fondo de tono morado */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        #heart {
+            font-size: 24px;
+            color: red;
+        }
+        #reason {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #nextButton {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #nextButton.hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="heart">❤️ m</div>
+        <h1>Razones por las que te amo</h1>
+        <div id="reason">1.- Eres la persona más hermosa y linda que he visto en toda mi vida</div>
+        <button id="nextButton">Siguiente Razón</button>
+    </div>
+
+    <script>
+        var reasons = [
+            "1.- Eres la persona más hermosa y linda que he visto en toda mi vida",
+            "2.- Eres increíblemente carismática, siempre me haces reír o sabes cómo sacarme una sonrisa",
+            "3.- Eres Detallista y lo amo",
+            "4.- Eres super amable",
+            "5.- Tienes carácter",
+            "6.- Dibujas increíblemente hermoso",
+            "7.- Amo todo de ti, ningún detalle de ti me disgusta, te amo Makima."
+        ];
+
+        var currentReasonIndex = 0;
+        var reasonText = document.getElementById("reason");
+        var nextButton = document.getElementById("nextButton");
+
+        nextButton.addEventListener("click", function() {
+            currentReasonIndex++;
+            if (currentReasonIndex < reasons.length) {
+                reasonText.textContent = reasons[currentReasonIndex];
+            }
+            if (currentReasonIndex === reasons.length - 1) {
+                nextButton.classList.add("hide");
+            }
+        });
+    </script>
+</body>
+</html>
